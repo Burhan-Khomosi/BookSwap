@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BookSwap – Second-Hand Book Exchange</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@600;800&family=Nunito+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+:root {
+  --ink: #1B1F2A;
+  --teal: #1F4E5F;
+  --paper: #FAFAF7;
+  --mustard: #E3B23C;
+}
+body { font-family: 'Nunito Sans', sans-serif; background: var(--paper); color: var(--ink); }
+h1, h2, h3, h4, h5, .navbar-brand { font-family: 'Bitter', serif; }
+.navbar { background: var(--teal); }
+.navbar .nav-link, .navbar-brand { color: #fff !important; }
+.navbar .nav-link:hover, .navbar .nav-link.active { color: var(--mustard) !important; }
+.hero { background: var(--teal); color: #fff; padding: 90px 0; }
+.hero h1 { font-weight: 800; font-size: clamp(2.2rem, 5vw, 3.6rem); }
+.page-title { background: var(--teal); color: #fff; padding: 50px 0; }
+.page-title h1 { font-weight: 800; }
+.btn-accent { background: var(--mustard); color: var(--ink); font-weight: 600; border: none; }
+.btn-accent:hover { background: #cf9f2c; color: var(--ink); }
+.book-card { border: 1px solid #e3e1d8; border-radius: 6px; background: #fff; }
+.book-cover {
+  height: 200px; display: flex; align-items: center; justify-content: center;
+  background: #e8eef0; color: var(--teal); font-family: 'Bitter', serif;
+  font-size: 1.1rem; padding: 1rem; text-align: center;
+}
+.price { font-weight: 800; color: var(--teal); }
+.step { border-left: 4px solid var(--mustard); padding-left: 1rem; }
+footer { background: var(--ink); color: #cfd3dc; }
+    html { scroll-behavior: smooth; }
+
+    .card-link { display: block; }
+.card-img-full {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 4;
+  object-fit: contain;
+  display: block;
+  transition: transform 0.25s ease, filter 0.25s ease;
+}
+.card-link:hover .card-img-full {
+  transform: translateY(-6px);
+  filter: drop-shadow(0 10px 16px rgba(0, 0, 0, 0.15));
+}
+.card-link:active .card-img-full { transform: scale(0.98); }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="#home">BookSwap</a>
+      <ul class="navbar-nav ms-auto flex-row flex-wrap gap-3">
+        <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#browse">Browse</a></li>
+        <li class="nav-item"><a class="nav-link" href="#sell">Sell</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+  <header class="hero" id="home">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-7">
+          <h1>Pass your textbooks on. Pick up the next ones for less.</h1>
+          <p class="lead mt-3">BookSwap connects students on campus to buy, sell and exchange used books.</p>
+          <a href="#browse" class="btn btn-accent btn-lg mt-3 me-2">Browse books</a>
+          <a href="#sell" class="btn btn-outline-light btn-lg mt-3">Sell a book</a>
+        </div>
+      </div>
+    </div>
+  </header>
+<section class="py-5 bg-white">
+    <div class="container">
+      <h2 class="mb-4">How it works</h2>
+      <div class="row g-4">
+        <div class="col-md-4"><div class="step"><h5>List your book</h5><p>Fill in the title, price and your contact in the form below.</p></div></div>
+        <div class="col-md-4"><div class="step"><h5>A buyer finds it</h5><p>Students look through the books in the Browse section.</p></div></div>
+        <div class="col-md-4"><div class="step"><h5>Meet on campus</h5><p>Agree on a price and exchange the book in person.</p></div></div>
+      </div>
+    </div>
+  </section>
+  <section class="py-5" id="browse">
+    <div class="container">
+      <h2 class="mb-4">Browse books</h2>
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-4">
+  <div class="col">
+    <a href="#contact" class="card-link"><img src="images/card-letusc.png" alt="Let Us C by Yashavant Kanetkar, 200 Rs. Contact seller" class="card-img-full"></a>
+  </div>
+  <div class="col">
+    <a href="#contact" class="card-link"><img src="images/card-python.png" alt="Python Programming by Reema Thareja, 200 Rs. Contact seller" class="card-img-full"></a>
+  </div>
+  <div class="col">
+    <a href="#contact" class="card-link"><img src="images/card-maths.png" alt="Engineering Mathematics by B.S. Grewal, 250 Rs. Contact seller" class="card-img-full"></a>
+  </div>
+  <div class="col">
+    <a href="#contact" class="card-link"><img src="images/card-physics.png" alt="Engineering Physics by H.K. Malik, 150 Rs. Contact seller" class="card-img-full"></a>
+  </div>
+  <div class="col">
+    <a href="#contact" class="card-link"><img src="images/card-electrical.png" alt="Basic Electrical Engineering by D.P. Kothari, 200 Rs. Contact seller" class="card-img-full"></a>
+  </div>
+  <div class="col">
+    <a href="#contact" class="card-link"><img src="images/card-chemistry.jpg" alt="Engineering Chemistry by Jain and Jain, 150 Rs. Contact seller" class="card-img-full"></a>
+  </div>
+  <div class="col">
+    <a href="#contact" class="card-link"><img src="images/card-drawing.jpg" alt="Engineering Drawing by N.D. Bhatt, 200 Rs. Contact seller" class="card-img-full"></a>
+  </div>
+  <div class="col">
+    <a href="#contact" class="card-link"><img src="images/card-communication.png" alt="Communication Skills by Meenakshi Raman, 200 Rs. Contact seller" class="card-img-full"></a>
+  </div>
+</div>
+  </section>
+  <section class="py-5 bg-white" id="sell">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-7">
+          <h2 class="mb-4">Sell a book</h2>
+          <form>
+            <div class="mb-3"><label class="form-label">Book title</label><input type="text" class="form-control" required></div>
+            <div class="mb-3"><label class="form-label">Author</label><input type="text" class="form-control"></div>
+            <div class="row">
+              <div class="col-md-6 mb-3"><label class="form-label">Price (₹)</label><input type="number" class="form-control" min="0" required></div>
+              <div class="col-md-6 mb-3"><label class="form-label">Condition</label>
+                <select class="form-select"><option>Like new</option><option>Good</option><option>Used, some marks</option></select>
+              </div>
+            </div>
+            <div class="mb-3"><label class="form-label">Your phone or email</label><input type="text" class="form-control" required></div>
+            <button type="submit" class="btn btn-accent btn-lg">List my book</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="py-5" id="contact">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-7">
+          <h2 class="mb-4">Contact us</h2>
+          <form>
+            <div class="mb-3"><label class="form-label">Name</label><input type="text" class="form-control" required></div>
+            <div class="mb-3"><label class="form-label">Email</label><input type="email" class="form-control" required></div>
+            <div class="mb-3"><label class="form-label">Message</label><textarea class="form-control" rows="4" required></textarea></div>
+            <button type="submit" class="btn btn-accent btn-lg">Send message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer class="py-4 text-center">
+    <div class="container">
+      <p class="mb-1">BookSwap – Second-Hand Book Exchange</p>
+      <small>CWS Mini Project · Team: Ayushi, Sanvi, Burhan</small>
+    </div>
+  </footer>
+</body>
+</html>
